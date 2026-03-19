@@ -1,0 +1,100 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "euclides-editor": {
+      "projectType": "library",
+      "root": "euclides-editor",
+      "sourceRoot": "euclides-editor/src",
+      "prefix": "euclides-editor",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "euclides-editor/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "euclides-editor/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "euclides-editor/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "euclides-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "euclides-demo",
+      "sourceRoot": "euclides-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "euclides-demo/src/main.ts",
+            "tsConfig": "euclides-demo/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "euclides-demo/public"
+              }
+            ],
+            "styles": [
+              "euclides-demo/src/styles.css",
+               "euclides-editor/src/lib/styles/euclides-editor.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "euclides-demo:build:production"
+            },
+            "development": {
+              "buildTarget": "euclides-demo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
+  }
+}

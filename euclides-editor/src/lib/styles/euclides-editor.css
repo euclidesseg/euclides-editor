@@ -1,0 +1,292 @@
+/* =====================================================
+   1. VARIABLES
+===================================================== */
+:root {
+  --color-brand-blue: #244ef7;
+  --color-brand-lime: #d5ee3c;
+  --editor-bg: #ffffff;
+  --editor-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* =====================================================
+   2. BASE
+===================================================== */
+body {
+  background-color: rgb(241 245 249);
+}
+
+.ProseMirror {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* =====================================================
+   3. EDITOR LAYOUT
+===================================================== */
+.contend-editor {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  background: var(--editor-bg);
+  border-radius: 12px;
+  box-shadow: var(--editor-shadow);
+}
+
+#editor {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* =====================================================
+   4. SCROLLBAR
+===================================================== */
+#editor::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#editor::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-brand-lime) 70%, transparent);
+  border-radius: 4px;
+}
+
+#editor::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-lime);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+}
+
+#editor::-webkit-scrollbar-track {
+  background: color-mix(in oklab, var(--color-brand-lime) 20%, transparent);
+  border-radius: 4px;
+}
+
+/* =====================================================
+   5. EDITABLE AREA
+===================================================== */
+#editor div[contenteditable="true"] {
+  height: 100%;
+  padding: .5rem;
+}
+
+#editor div[contenteditable="true"]:focus-visible {
+  outline: none;
+}
+
+/* =====================================================
+   6. TOOLBAR
+===================================================== */
+.euclides-editor-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+
+  display: flex;
+  gap: .2rem;
+  padding: .2rem .4rem;
+
+  background: white;
+  border-bottom: 1px solid var(--color-brand-lime);
+}
+
+.buttons__container {
+  display: flex;
+  gap: 2px;
+}
+
+.buttons__container::-webkit-scrollbar {
+  display: none;
+}
+
+.euclides-editor-nav button {
+  padding: .4rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  background: none;
+  color: #1d293d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.euclides-editor-nav button:hover {
+  background-color:
+    color-mix(in oklab, var(--color-brand-lime) 40%, transparent);
+}
+
+.euclides-editor-nav button:disabled {
+  color: #90a1b9;
+  cursor: auto;
+}
+
+/* =====================================================
+   7. HEADING SELECTOR (NUEVO)
+===================================================== */
+.euclides__heading--selector {
+  position: absolute;
+  top: 2.2rem;
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: .5rem;
+
+  background: white;
+  border-radius: .5rem;
+  box-shadow: 0px 0px 10px -5px #808080d1;
+}
+
+#heading-container {
+  position: relative;
+  min-width: 35px;
+}
+
+/* =====================================================
+   8. POPOVER
+===================================================== */
+.popover {
+  position: absolute;
+  top: 2.5em;
+  left: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.popover input {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 200px;
+}
+
+/* =====================================================
+   9. PROSEMIRROR CONTENT
+===================================================== */
+.euclides-editor.ProseMirror {
+  width: 82%;
+  margin: 0 auto;
+}
+
+.euclides-editor h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.euclides-editor.ProseMirror pre {
+  margin: 1.5rem 0;
+  padding: 1rem;
+
+  border-radius: .5rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  background:
+    color-mix(in oklab, var(--color-brand-blue) 5%, transparent);
+
+  border:
+    1px solid color-mix(in oklab, var(--color-brand-blue) 10%, transparent);
+}
+
+/* =====================================================
+   10. IMAGE NODEVIEW
+===================================================== */
+.pm-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.pm-image-wrapper img {
+  display: block;
+}
+
+.ProseMirror-selectednode {
+  outline: 2px solid #3b82f6;
+}
+
+.resize-handle {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #3b82f6;
+  border-radius: 3px;
+  cursor: se-resize;
+}
+
+/* =====================================================
+   11. UTILITIES
+===================================================== */
+.texto-strike {
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.actions .action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1d293d;
+}
+
+.actions .action:disabled {
+  color: #90a1b9;
+  cursor: auto;
+}
+
+/* =====================================================
+   12. RESPONSIVE
+===================================================== */
+@media (width < 520px) {
+
+  .euclides-editor-nav {
+    order: 1;
+    position: static;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .buttons__container {
+    overflow-x: auto;
+  }
+
+  .euclides-editor.ProseMirror {
+    height: 100dvh;
+  }
+
+  .popover {
+    top: auto;
+    bottom: 40px;
+    z-index: 99;
+  }
+}
