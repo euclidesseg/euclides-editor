@@ -1,6 +1,6 @@
 {
   "name": "euclides-editor",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rich text editor for Angular based on ProseMirror",
    "keywords": [
     "angular",
@@ -9,14 +9,25 @@
     "prosemirror",
     "wysiwyg"
   ],
-  "license":"UNLICENSED",
+  "license":"GPL-3.0-only",
   "homepage": "https://www.euclides-editor.com",
   "peerDependencies": {
     "@angular/common": "^21.1.0",
-    "@angular/core": "^21.1.0"
+    "@angular/core": "^21.1.0",
+
+    "prosemirror-commands": "^1.7.1",
+    "prosemirror-history": "^1.5.0",
+    "prosemirror-inputrules": "^1.5.1",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-schema-basic": "^1.2.4",
+    "prosemirror-schema-list": "^1.5.1",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.6"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+
   },
   "author": {
     "name": "Euclides Pérez",

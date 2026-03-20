@@ -9,8 +9,8 @@ import { Component, signal, ViewChild } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  @ViewChild(EuclidesEditorComponent)
-  editor!: EuclidesEditorComponent;
+
+  editor = ViewChild(EuclidesEditorComponent)
   
   save(){
     const content = this.editor.getDoc();

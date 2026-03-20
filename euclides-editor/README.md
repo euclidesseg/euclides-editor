@@ -49,8 +49,8 @@ import { EuclidesEditorComponent } from 'euclides-editor';
 })
 export class AppComponent {
 
-  @ViewChild(EuclidesEditorComponent)
-  editor!: EuclidesEditorComponent;
+  
+  editor = ViewChild(EuclidesEditorComponent);
 
   save() {
     const content = this.editor.getDoc();
