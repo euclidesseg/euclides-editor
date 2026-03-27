@@ -1,6 +1,6 @@
 {
   "name": "euclides-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rich text editor for Angular based on ProseMirror",
    "keywords": [
     "angular",
@@ -32,7 +32,7 @@
   "author": {
     "name": "Euclides Pérez",
     "email": "euclides2696@gmail.com",
-    "url": "https://www.euclides-editor.com"
+    "url": "https://github.com/euclidesseg"
   },
   "sideEffects": false
 }

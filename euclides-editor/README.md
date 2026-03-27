@@ -66,6 +66,13 @@ export class AppComponent {
 ```html
 <euclides-editor></euclides-editor>
 ```
+### Stylses
+
+```json
+  "styles": [
+    "node_modules/euclides-editor/src/lib/styles/euclides-editor.css"
+  ]
+```
 
 ---
 
@@ -118,4 +125,4 @@ UNLICENSED — All rights reserved.
 ## 👤 Author
 
 **Euclides Pérez**
-https://www.euclides-editor.com
+https://github.com/euclidesseg

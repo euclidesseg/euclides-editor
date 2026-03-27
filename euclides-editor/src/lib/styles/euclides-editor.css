@@ -5,9 +5,7 @@
   --color-brand-blue: #244ef7;
   --color-brand-lime: #d5ee3c;
   --editor-bg: #ffffff;
-  --editor-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.06);
+  --editor-shadow:0 3px 20px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)
 }
 
 /* =====================================================
@@ -197,11 +195,90 @@ body {
   margin: 0 auto;
 }
 
-.euclides-editor h1 {
-  font-size: 1.5em;
+.euclides-editor.ProseMirror h1,
+.euclides-editor.ProseMirror h2,
+.euclides-editor.ProseMirror h3,
+.euclides-editor.ProseMirror h4 {
   font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
 }
 
+.euclides-editor.ProseMirror h1 {
+  font-size: 2em;
+}
+
+.euclides-editor.ProseMirror h2 {
+  font-size: 1.7em;
+}
+
+.euclides-editor.ProseMirror h3 {
+  font-size: 1.4em;
+}
+
+.euclides-editor.ProseMirror h4 {
+  font-size: 1.2em;
+}
+
+/* =====================================================
+   Lists
+===================================================== */
+.euclides-editor.ProseMirror ul,
+.euclides-editor.ProseMirror ol {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+}
+
+.euclides-editor.ProseMirror li {
+  margin: 0.3em 0;
+}
+
+.euclides-editor.ProseMirror li p {
+  margin: 0;
+}
+.euclides-editor.ProseMirror ul {
+  list-style: disc;
+}
+
+.euclides-editor.ProseMirror ul ul {
+  list-style: circle;
+}
+
+.euclides-editor.ProseMirror ul ul ul {
+  list-style: square;
+}
+.euclides-editor.ProseMirror ol {
+  list-style: decimal;
+}
+
+.euclides-editor.ProseMirror ol ol {
+  list-style: lower-alpha;
+}
+
+.euclides-editor.ProseMirror ol ol ol {
+  list-style: lower-roman;
+}
+.euclides-editor.ProseMirror strong {
+  font-weight: 700;
+}
+.euclides-editor.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 8px;
+}
+.euclides-editor.ProseMirror img.ProseMirror-selectednode {
+  outline: 2px solid #3b82f6;
+}
+.euclides-editor.ProseMirror > *:first-child {
+  margin-top: 0;
+}
+
+.euclides-editor.ProseMirror > *:last-child {
+  margin-bottom: 0;
+}
 .euclides-editor.ProseMirror pre {
   margin: 1.5rem 0;
   padding: 1rem;
