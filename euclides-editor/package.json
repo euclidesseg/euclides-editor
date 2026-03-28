@@ -32,8 +32,5 @@
     "email": "euclides2696@gmail.com",
     "url": "https://github.com/euclidesseg"
   },
-  "sideEffects": false,
-   "./styles/euclides-editor.css": {
-    "default": "./src/lib/styles/euclides-editor.css"
-  }
+  "sideEffects": false
 }
